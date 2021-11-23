@@ -34,7 +34,7 @@ router.post('/uploads', multipleUpload, (req, res) => {
             Bucket: process.env.AWS_BUCKET_UPLOAD_PATH,
             Key: filename,
             Body: file.buffer,
-            ContentType: file.mimeytpe,
+            ContentType: file.mimetype,
         }
         s3client.upload(params, (err, data) => {
             if (err) {
