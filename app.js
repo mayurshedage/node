@@ -4,6 +4,8 @@ const cors = require('cors');
 
 const fs = require('fs');
 
+const uploadRoute = require('./routes/upload.route');
+
 const app = express();
 
 app.use(cors());
@@ -28,5 +30,7 @@ app.get('/read', async (req, res) => {
 
     res.status(200).json(file)
 });
+
+app.use(uploadRoute);
 
 module.exports = app;
