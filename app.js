@@ -20,7 +20,14 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views')
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.send('Hello World');
+});
+
+app.get('/test', (req, res) => {
+    res.send({
+        code: 'OK',
+        message: 'This is test route'
+    });
 });
 
 app.get('/read', async (req, res) => {
